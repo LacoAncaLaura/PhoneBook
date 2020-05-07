@@ -1,6 +1,6 @@
 package org.fasttrackit.domain;
 
-public class people {
+public class People {
     private long id;
     private String firstName;
 
