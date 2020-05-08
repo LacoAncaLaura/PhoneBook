@@ -8,9 +8,9 @@ public class People {
     public String toString() {
         return "people{" +
                 "id=" + id +
-                ", FirstName='" + firstName + '\'' +
-                ", LastName='" + lastName + '\'' +
-                ", PhoneNumber=" + phoneNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber=" + phoneNumber +
                 '}';
     }
 
