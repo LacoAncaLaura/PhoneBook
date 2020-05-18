@@ -8,9 +8,9 @@ public class People {
     public String toString() {
         return "people{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", FirstName='" + firstName + '\'' +
+                ", LastName='" + lastName + '\'' +
+                ", PhoneNumber=" + phoneNumber +
                 '}';
     }
 
@@ -23,27 +23,27 @@ public class People {
         this.id = id;
     }
 
-    public String getfirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setfirstName(String firstName) {
+    public void setFirstName(String firstName) {
         firstName = firstName;
     }
 
-    public String getlastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setlastName(String lastName) {
+    public void setLastName(String lastName) {
         lastName = lastName;
     }
 
-    public long getphoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setphoneNumber(long phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         phoneNumber = phoneNumber;
     }
 

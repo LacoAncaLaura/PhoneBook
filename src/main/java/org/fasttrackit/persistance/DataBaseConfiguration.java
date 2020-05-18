@@ -17,7 +17,8 @@ public class DataBaseConfiguration {
             Properties properties = new Properties();
             properties.load(inputStream);
 
-            return DriverManager.getConnection(properties.getProperty("url"),
+            return DriverManager.getConnection(
+                    properties.getProperty("url"),
                     properties.getProperty("username"),
                     properties.getProperty("password"));
         } finally {
