@@ -1,10 +1,7 @@
 package org.fasttrackit.web;
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.fasttrackit.service.PeopleService;
 import org.fasttrackit.transfer.CreatePhoneBookRequest;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet("/PhoneBook")
+@WebServlet("/people1")
 public class PeopleServlet extends HttpServlet {
     private PeopleService peopleService = new PeopleService();
 
