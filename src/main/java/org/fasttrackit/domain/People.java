@@ -2,18 +2,9 @@ package org.fasttrackit.domain;
 
 public class People {
     private long id;
-    private String firstName;
-
-    @Override
-    public String toString() {
-        return "people{" +
-                "id=" + id +
-                ", FirstName='" + firstName + '\'' +
-                ", LastName='" + lastName + '\'' +
-                ", PhoneNumber=" + phoneNumber +
-                '}';
-    }
-
+    private String FirstName;
+    private String LastName;
+    private long PhoneNumber;
 
     public long getId() {
         return id;
@@ -24,31 +15,38 @@ public class People {
     }
 
     public String getFirstName() {
-        return firstName;
+        return FirstName;
     }
 
-    public void setFirstName(String firstName) {
-        firstName = firstName;
+    public void setFirstName(String FirstName) {
+        FirstName = FirstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return LastName;
     }
 
-    public void setLastName(String lastName) {
-        lastName = lastName;
+    public void setLastName(String LastName) {
+        LastName = LastName;
     }
 
     public long getPhoneNumber() {
-        return phoneNumber;
+        return PhoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
-        phoneNumber = phoneNumber;
+    public void setPhoneNumber(long PhoneNumber) {
+        PhoneNumber = PhoneNumber;
     }
 
-    private String lastName;
-    private long phoneNumber;
 
+    @Override
+    public String toString() {
+        return "people{" +
+                "id=" + id +
+                ", FirstName='" + FirstName + '\'' +
+                ", LastName='" + LastName + '\'' +
+                ", PhoneNumber=" + PhoneNumber +
+                '}';
+    }
 
 }

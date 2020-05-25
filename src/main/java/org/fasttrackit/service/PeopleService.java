@@ -23,8 +23,8 @@ public class PeopleService {
     }
 
     public List<People> selectContact() throws SQLException, IOException {
-        String sql3 = "SELECT fistName FROM people WHERE fistName = Laura ";
-        List<People> phoneNumbers = new ArrayList<>();
+        String sql3 = "SELECT FistName FROM people WHERE FistName = Laura ";
+        List<People> PhoneNumbers = new ArrayList<>();
         try (Connection connection = DataBaseConfiguration.getConnection();
              Statement statement = connection.createStatement()) {
 
