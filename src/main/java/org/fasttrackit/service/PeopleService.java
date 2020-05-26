@@ -1,15 +1,11 @@
 package org.fasttrackit.service;
 import org.fasttrackit.domain.People;
-import org.fasttrackit.persistance.DataBaseConfiguration;
 import org.fasttrackit.persistance.PhoneBookRepository;
 import org.fasttrackit.transfer.CreatePhoneBookRequest;
+import org.fasttrackit.transfer.UpdatePhoneBookRequest;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PeopleService {
@@ -20,15 +16,24 @@ public class PeopleService {
         phoneBookRepository.createContacts(request);
     }
 
-    public List<People> selectContact() throws SQLException, IOException {
-        String sql3 = "SELECT FistName FROM people WHERE FistName = Laura ";
-        List<People> PhoneNumbers = new ArrayList<>();
-        try (Connection connection = DataBaseConfiguration.getConnection();
-             Statement statement = connection.createStatement()) {
-
-            ResultSet resultSet = statement.executeQuery(sql3);
-        }
-        return selectContact();
+    public void updatePeople(long id, UpdatePhoneBookRequest request) throws SQLException, IOException, ClassNotFoundException {
+        System.out.println("Updating task: " + id + ":" + request);
+        phoneBookRepository.updatePeople(id, request);
     }
+
+    public void deleteContact(long id) throws SQLException, IOException, ClassNotFoundException {
+        System.out.println("Deleting task: " + id);
+        phoneBookRepository.deleteContact(id);
+    }
+
+    public List<People> getPeople1() throws SQLException, IOException, ClassNotFoundException {
+        System.out.println("Retrieving tasks");
+        phoneBookRepository.getPeople1();
+        return getPeople1();
+    }
+//    public void deleteAll(long id)throws SQLException, IOException, ClassNotFoundException {
+//        System.out.println("Deleting all");
+//        phoneBookRepository.deleteAll(id);
+//    }
 
 }

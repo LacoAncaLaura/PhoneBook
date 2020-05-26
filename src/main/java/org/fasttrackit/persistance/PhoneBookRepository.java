@@ -21,7 +21,7 @@ public class PhoneBookRepository {
         }
     }
 
-    public List<People> getPeople() throws IOException, SQLException, ClassNotFoundException {
+    public List<People> getPeople1() throws IOException, SQLException, ClassNotFoundException {
         String sql1 = "SELECT * FROM people";
         List<People> phoneNumbers = new ArrayList<>();
         try (Connection connection = DataBaseConfiguration.getConnection();
@@ -49,7 +49,7 @@ public class PhoneBookRepository {
              PreparedStatement preparedStatement = connection.prepareStatement(sql4)) {
             preparedStatement.setString(1, request.getFirstName());
             preparedStatement.setString(1, request.getLastName());
-            //phoneNumber
+          //PhoneNumber
             preparedStatement.setLong(2, id);
 
             preparedStatement.executeUpdate();
@@ -66,15 +66,16 @@ public class PhoneBookRepository {
     }
 
 
-    public void deleteAll(long id) throws SQLException, IOException, ClassNotFoundException {
-        String sql6 = "DELETE * FROM people";
-        try (Connection connection = DataBaseConfiguration.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql6)) {
-            preparedStatement.setLong(1, id);
-            preparedStatement.executeUpdate();
-        }
-    }
+//    public void deleteAll(long id) throws SQLException, IOException, ClassNotFoundException {
+//        String sql6 = "DELETE * FROM people";
+//        try (Connection connection = DataBaseConfiguration.getConnection();
+//             PreparedStatement preparedStatement = connection.prepareStatement(sql6)) {
+//            preparedStatement.setLong(1, id);
+//            preparedStatement.executeUpdate();
+//        }
+//    }
 }
+
 
 
 

@@ -21,7 +21,7 @@ public class App {
         PhoneBookRepository phoneBookRepository = new PhoneBookRepository();
         phoneBookRepository.createContacts(request);
 
-        List<People> people = phoneBookRepository.getPeople();
+        List<People> people = phoneBookRepository.getPeople1();
         System.out.println(people);
 
     }
