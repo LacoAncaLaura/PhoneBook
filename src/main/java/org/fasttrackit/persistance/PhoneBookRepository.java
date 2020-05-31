@@ -44,12 +44,12 @@ public class PhoneBookRepository {
     }
 
     public void updatePeople(long id, UpdatePhoneBookRequest request) throws SQLException, IOException, ClassNotFoundException {
-        String sql4 = "UPDATE People SET first_name = ?, last_name ...phoneNumber WHERE id = ?";
+        String sql4 = "UPDATE People SET first_name = ?, last_name = ?, phoneNumber = ? WHERE id = ?";
         try (Connection connection = DataBaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql4)) {
             preparedStatement.setString(1, request.getFirstName());
             preparedStatement.setString(1, request.getLastName());
-          //PhoneNumber
+            preparedStatement.setLong(2, request.getPhoneNumber());
             preparedStatement.setLong(2, id);
 
             preparedStatement.executeUpdate();

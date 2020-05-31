@@ -36,10 +36,10 @@ public class PeopleServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String PhoneNumber = req.getParameter("PhoneNumber");
+        String id = req.getParameter("id");
         UpdatePhoneBookRequest request = ObjectMapperConfiguration.OBJECT_MAPPER.readValue(req.getReader(), UpdatePhoneBookRequest.class);
         try {
-            peopleService.updatePeople(Long.parseLong(PhoneNumber),request);
+            peopleService.updatePeople(Long.parseLong(id),request);
         }  catch (SQLException | ClassNotFoundException e) {
             resp.sendError(500, "There was an error while processing your request." + e.getMessage());
         }

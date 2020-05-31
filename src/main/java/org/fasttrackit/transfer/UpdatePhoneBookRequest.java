@@ -21,8 +21,8 @@ public class UpdatePhoneBookRequest {
         this.lastName = lastName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public long getPhoneNumber() {
+        return Long.parseLong(phoneNumber);
     }
 
     public void setPhoneNumber(String phoneNumber) {
