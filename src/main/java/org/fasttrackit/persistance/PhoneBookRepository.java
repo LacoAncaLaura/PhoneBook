@@ -23,7 +23,7 @@ public class PhoneBookRepository {
 
     public List<People> getPeople1() throws IOException, SQLException, ClassNotFoundException {
         String sql1 = "SELECT * FROM people";
-        List<People> phoneNumbers = new ArrayList<>();
+        List<People> PhoneNumbers = new ArrayList<>();
         try (Connection connection = DataBaseConfiguration.getConnection();
              Statement statement = connection.createStatement()) {
 
@@ -34,11 +34,10 @@ public class PhoneBookRepository {
                 people.setId(resultSet.getLong("id"));
                 people.setFirstName(resultSet.getString("FistName"));
                 people.setLastName(resultSet.getString("LastName"));
-                people.setPhoneNumber(resultSet.getLong("PhoneNumber"));
-                phoneNumbers.add(people);
+                people.setPhoneNumber(resultSet.getLong("PhoneNumber"));PhoneNumbers.add(people);
 
             }
-            return phoneNumbers;
+            return PhoneNumbers;
         }
 
     }
@@ -56,11 +55,11 @@ public class PhoneBookRepository {
         }
     }
 
-    public void deleteContact(long phoneNumber) throws SQLException, IOException, ClassNotFoundException {
+    public void deleteContact(long PhoneNumber) throws SQLException, IOException, ClassNotFoundException {
         String sql5 = "DELETE FROM people WHERE PhoneNumber =?";
         try (Connection connection = DataBaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql5)) {
-            preparedStatement.setLong(1, phoneNumber);
+            preparedStatement.setLong(1, PhoneNumber);
             preparedStatement.executeUpdate();
         }
     }
