@@ -32,9 +32,9 @@ public class PhoneBookRepository {
             while (resultSet.next()) {
                 People people = new People();
                 people.setId(resultSet.getLong("id"));
-                people.setFirstName(resultSet.getString("Laura"));
-                people.setLastName(resultSet.getString("Laco"));
-                people.setPhoneNumber(resultSet.getLong(751224483));
+                people.setFirstName(resultSet.getString("FistName"));
+                people.setLastName(resultSet.getString("LastName"));
+                people.setPhoneNumber(resultSet.getLong("PhoneNumber"));
                 phoneNumbers.add(people);
 
             }
@@ -44,7 +44,7 @@ public class PhoneBookRepository {
     }
 
     public void updatePeople(long id, UpdatePhoneBookRequest request) throws SQLException, IOException, ClassNotFoundException {
-        String sql4 = "UPDATE People SET first_name = ?, last_name = ?, phoneNumber = ? WHERE id = ?";
+        String sql4 = "UPDATE People SET FirstName = ?, LastName = ?, PhoneNumber = ? WHERE id = ?";
         try (Connection connection = DataBaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql4)) {
             preparedStatement.setString(1, request.getFirstName());
@@ -57,7 +57,7 @@ public class PhoneBookRepository {
     }
 
     public void deleteContact(long phoneNumber) throws SQLException, IOException, ClassNotFoundException {
-        String sql5 = "DELETE FROM people WHERE phoneNumber =?";
+        String sql5 = "DELETE FROM people WHERE PhoneNumber =?";
         try (Connection connection = DataBaseConfiguration.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql5)) {
             preparedStatement.setLong(1, phoneNumber);
